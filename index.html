@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Baptiste</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fdfdfd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      text-align: left;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      text-align: left;
+      color: #e3f2fd;
+      font-weight: 400;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      background-color: #ffffff;
+      color: #2a5298;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .social-link:hover {
+      background-color: #e3f2fd;
+      color: #1e3c72;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .social-link {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-start">
+    <img src="photo.jpg" alt="Photo de Baptiste" class="profile-img">
+    <h1>Baptiste</h1>
+    <p>
+      Tu m’as croisé, ou t’as juste eu envie de savoir.<br>
+      Je m’appelle Baptiste.<br>
+      Quelqu’un de simple, qui aime ce qui a du sens, ce qui est bien fait.<br>
+      J’observe, je crée, je construis à ma façon — sans faire de bruit.<br>
+      Pas besoin d’en faire trop. Pas là pour briller.<br>
+      Juste une présence, une vibe, un QR code au dos d’un pull.<br>
+      On peut discuter juste ici 👇
+    </p>
+    <a class="social-link" href="https://www.instagram.com/o_bapt_o/" target="_blank">
+      <i class="fab fa-instagram"></i> @o_bapt_o
+    </a>
+  </div>
+</body>
+</html>
