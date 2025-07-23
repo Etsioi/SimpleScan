@@ -13,13 +13,38 @@
       padding: 0;
       min-height: 100vh;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background: linear-gradient(120deg, #689ece, #6c7ccb 60%, #fc5c7d 100%);
+      background-size: 400% 400%;
+      animation: gradientMove 5s linear infinite;
       color: #fdfdfd;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
     }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+  background: linear-gradient(90deg, #ffb347, #ff7746, #ff3c3c, #ffb347);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+@keyframes shine {
+  to { background-position: 200% center; }
+}
 
     .container {
       max-width: 600px;
@@ -44,6 +69,11 @@
       border: 3px solid white;
       margin-bottom: 1.2rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .profile-img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 8px 32px rgba(30,60,114,0.25);
     }
 
     h1 {
@@ -76,12 +106,52 @@
       font-size: 1rem;
       transition: all 0.3s ease;
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
     }
 
-    .social-link:hover {
-      background-color: #e3f2fd;
-      color: #1e3c72;
-      transform: translateY(-2px);
+    .social-link::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, #e3f2fd88 0%, transparent 70%);
+      opacity: 0.7;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s cubic-bezier(.4,2,.6,1), height 0.4s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .social-link:hover::before {
+      width: 220%;
+      height: 220%;
+      opacity: 0.5;
+    }
+
+    .social-link::after {
+      content: "";
+      position: absolute;
+      left: -75%;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, #e3f2fd88 60%, transparent);
+      transform: skewX(-20deg);
+      transition: left 0.5s;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .social-link:hover::after {
+      left: 120%;
+    }
+
+    .social-link > * {
+      position: relative;
+      z-index: 3;
     }
 
     @media (max-width: 600px) {
@@ -123,4 +193,3 @@
     </a>
   </div>
 </body>
-</html>
