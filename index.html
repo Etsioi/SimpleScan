@@ -30,21 +30,21 @@
     }
 
     h1 {
-  background: linear-gradient(90deg, #ffb347, #ff7746, #ff3c3c, #ffb347);
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite;
-  font-size: 3.2rem;
-  font-weight: 800;
-  margin-bottom: 1.2rem;
-  text-align: left;
-}
-@keyframes shine {
-  to { background-position: 200% center; }
-}
+      background: linear-gradient(90deg, #ffb347, #ff7746, #ff3c3c, #ffb347);
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
 
     .container {
       max-width: 600px;
@@ -70,18 +70,13 @@
       margin-bottom: 1.2rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
     }
     .profile-img:hover {
       transform: scale(1.06);
-      box-shadow: 0 8px 32px rgba(30,60,114,0.25);
-    }
-
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      margin-bottom: 1.2rem;
-      text-align: left;
-      color: #ffffff;
+      box-shadow:
+        0 8px 32px rgba(30,60,114,0.25),
+        0 0 24px 8px #ffb34788;
     }
 
     p {
@@ -193,3 +188,4 @@
     </a>
   </div>
 </body>
+</html>
